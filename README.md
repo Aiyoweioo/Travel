@@ -24,3 +24,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 - reset.css 解决所有客户端浏览一致问题
 - border.css 解决移动端像素边框的问题，不同设备的物理像素和逻辑像素的比例关系不一致
 - 移动端三百毫秒延迟的问题 npm install --save fastclick 在main.js进行绑定
+- stylus编写css代码 npm install stylus-loader  stylus --save
+- reset: 1 rem = html font-size = 50px ,.header设置height: 43px则stylus应该设置为.86rem
+- 设置stylus变量，保存全局背景色, 在alias写css时import需要加~
