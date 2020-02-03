@@ -27,3 +27,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 - stylus编写css代码 npm install stylus-loader  stylus --save
 - reset: 1 rem = html font-size = 50px ,.header设置height: 43px则stylus应该设置为.86rem
 - 设置stylus变量，保存全局背景色, 在alias写css时import需要加~
+## 首页轮播图
+ - npm install --save vue-awesome-swiper@2.6.7
+ - 防止页面图片还没出现， 出现抖动， 需要根据图片设置宽高比 width: 100%; height: 0;padding-bottom: 31.25%;设置31.25%是因为图片640*200， 宽高比就是31.25%，不能直接设置高度， 因为height是根据父容器的高度
