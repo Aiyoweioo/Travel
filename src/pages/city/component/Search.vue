@@ -28,4 +28,4 @@ export default {
         line-height: .62rem
         border-radius: .06rem
         color: #ccc
-</style>>
+</style>
