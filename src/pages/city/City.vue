@@ -2,8 +2,13 @@
   <div>
     <city-header/>
     <city-search/>
-    <city-list :hotCities="hotCities" :cities="cities"/>
-    <city-alphabet :cities="cities"/>
+    <city-list
+    :hotCities="hotCities"
+    :cities="cities"
+    :letter="letter"/>
+    <city-alphabet
+    :cities="cities"
+    @change="this.handleLetterChange"/>
   </div>
 </template>
 
@@ -18,7 +23,8 @@ export default {
   data () {
     return {
       hotCities: [],
-      cities: {}
+      cities: {},
+      letter: ''
     }
   },
   components: {
@@ -31,10 +37,12 @@ export default {
     this.getCityInfo()
   },
   methods: {
+    // 获取城市数据事件
     getCityInfo () {
       axios.get('/static/mock/city.json')
         .then(this.handleGetCityInfoSucc)
     },
+    // 成功获取数据事件
     handleGetCityInfoSucc (res) {
       console.log(res)
       res = res.data
@@ -43,6 +51,11 @@ export default {
         this.hotCities = data.hotCities
         this.cities = data.cities
       }
+    },
+    // 监听点击右侧字母事件
+    handleLetterChange (letter) {
+      // console.log(letter)
+      this.letter = letter
     }
   }
 }
