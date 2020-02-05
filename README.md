@@ -82,7 +82,7 @@ this.scroll.scrollToElement(element)
     this.$emit('change', this.letters[index]) // 获取到具体的字母传递给父组件city
   }
 ```
-### 性能优化
+### 列表性能优化
 - this.$refs['A'][0].offsetTop 
   1. value是固定的，一旦alphabet第一次渲染成功，就不会改变
   2. 若在methods，会造成每次渲染都会计算一次，性能低，改成在updated()生命周期和函数
@@ -103,3 +103,8 @@ if (this.timer) {
           }
         }, 16)
 ```
+### 搜索框功能实现
+- 根据输入值显示搜索结果
+- 解决搜索关键词为空，页面还存在搜索结果的问题
+- 解决由于搜索出来的关键词过多，不能滚动的问题
+- 若找不到匹配结果，则显示提示
