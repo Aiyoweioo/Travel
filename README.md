@@ -140,3 +140,24 @@ if (this.timer) {
 
 ### 拖动多个页面会相互影响
 - 在vue-router设置scrollBehavior,每次路由切换的时候返回到页面顶部
+
+### webpack通过IP地址的访问
+webpack默认不能通过ip地址的访问，在package.json修改：脚本的"dev"里添加--host 0.0.0.0
+
+### 在城市页上下拖动右侧字母出现上侧空白的bug
+这是因为alphabet组件在计算移动时，没有阻止touchStart的默认行为，需要添加事件修饰符，touchstart.prevent
+
+### babel-polyfill解决不能兼容promise的问题
+- 某些浏览器没有promise特性，会造成屏幕白屏
+- npm install babel-polyfill --save
+- babel-polyfill自动检测若浏览器没有promise，则自动添加es6的新特性
+
+### 异步组件实现按需加载
+#### build打包后的文件
+- app.js文件：各页面的逻辑代码，主要是异步组件
+- map后缀文件: sourcemap文件，调试被压缩过的代码，如css.map, js.map
+- manifest.js文件：webpack打包后的配置文件
+- vendor.js文件： 各页面各组件公用的代码
+#### 当访问某个页面的时候不需要加载另外一个页面的内容
+- 当app.js很大达到几Mb时，才使用异步加载，进行多次axios，否则有可能多次axios的代价会更高
+-  component: Home => import('@/pages/home/Home.vue')

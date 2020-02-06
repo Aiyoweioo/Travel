@@ -39,7 +39,7 @@ export default {
   methods: {
     // 获取城市数据事件
     getCityInfo () {
-      axios.get('/static/mock/city.json')
+      axios.get('/api/city.json')
         .then(this.handleGetCityInfoSucc)
     },
     // 成功获取数据事件

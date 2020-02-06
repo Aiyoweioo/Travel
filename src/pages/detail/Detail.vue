@@ -38,7 +38,7 @@ export default {
   methods: {
     // 获取详情列表页信息
     getDatailInfo () {
-      axios.get('/static/mock/detail.json', {
+      axios.get('/api/detail.json', {
         params: {
           id: this.$route.params.id
         }
