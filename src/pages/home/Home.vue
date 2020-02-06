@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header :city="city"/>
+    <home-header/>
     <home-swiper :swiperList="swiperList"/>
     <home-icons :iconList="iconList"/>
     <home-recommend :recommendList="recommendList"/>
@@ -29,7 +29,7 @@ export default {
   },
   data () {
     return {
-      city: '',
+      // city: '', 存储在store
       swiperList: [],
       iconList: [],
       recommendList: [],
@@ -46,7 +46,6 @@ export default {
       console.log(res)
       if (res.ret && res.data) {
         const data = res.data
-        this.city = data.city
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.recommendList = data.recommendList

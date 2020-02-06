@@ -108,3 +108,8 @@ if (this.timer) {
 - 解决搜索关键词为空，页面还存在搜索结果的问题
 - 解决由于搜索出来的关键词过多，不能滚动的问题
 - 若找不到匹配结果，则显示提示
+
+### Vuex
+- city页和首页数据通信
+- 解决选中某个城市，下次再访问这个网站时，还是上次那个城市的问题-》》localStorage
+- localStorage:在外层包裹一个try catch,在某些浏览器，若用户关闭localStorage或者使用隐身模式，使用localStorage会抛出异常
