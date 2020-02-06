@@ -113,3 +113,7 @@ if (this.timer) {
 - city页和首页数据通信
 - 解决选中某个城市，下次再访问这个网站时，还是上次那个城市的问题-》》localStorage
 - localStorage:在外层包裹一个try catch,在某些浏览器，若用户关闭localStorage或者使用隐身模式，使用localStorage会抛出异常
+
+### detail页下的轮播图
+- 当swiper的父元素或者自身发生变化时，需要自我刷新一次
+- 需要设置swiper的observeParents和observer为true,，不然宽度会出现问题
