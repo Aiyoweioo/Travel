@@ -26,6 +26,9 @@ export default {
   activated () {
     window.addEventListener('scroll', this.handleScroll)
   },
+  disactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
     handleScroll () {
       // 获取当前滑动距离顶部的距离
@@ -59,6 +62,7 @@ export default {
       color: #ffffff
       font-size: .4rem
   .header-fixed
+    z-index: 2
     overflow: hidden
     position: fixed
     left: 0

@@ -117,3 +117,15 @@ if (this.timer) {
 ### detail页下的轮播图
 - 当swiper的父元素或者自身发生变化时，需要自我刷新一次
 - 需要设置swiper的observeParents和observer为true,，不然宽度会出现问题
+
+### 对全局事件的解绑
+- 对组件绑定window监听事件，需要在组件隐藏的时候解除绑定window监听事件
+```js
+  activated () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  disactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+```
+### 递归组件实现detail-list
