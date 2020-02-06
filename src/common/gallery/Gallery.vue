@@ -1,4 +1,3 @@
-
 <template>
   <div class="container" @click="handleGalleryClick">
     <div class="wrapper">
