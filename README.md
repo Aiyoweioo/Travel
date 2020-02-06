@@ -129,3 +129,14 @@ if (this.timer) {
   },
 ```
 ### 递归组件实现detail-list
+```
+<div v-if="item.children" class="item-children">
+  <detail-list :categoryList="item.children"/>
+</div>
+```
+### component组件name的作用
+- 递归组件
+- keep-alive取消缓存的时候
+
+### 拖动多个页面会相互影响
+- 在vue-router设置scrollBehavior,每次路由切换的时候返回到页面顶部

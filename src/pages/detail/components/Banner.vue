@@ -3,15 +3,18 @@
     <div class="banner" @click="handleBannerGallery">
       <img
       class="banner-img"
-      src="//img1.qunarzz.com/sight/p0/1505/97/97d57e2d8cee926d.water.jpg_600x330_7cfcc192.jpg"
+      :src="bannerImg"
       alt="图片"/>
       <div class="banner-info">
-        <div class="banner-title">澳门旅游观光塔</div>
-        <div class="banner-number"><span class="iconfont banner-icon">&#xe678;</span>39</div>
+        <div class="banner-title">{{this.sightName}}</div>
+        <div class="banner-number">
+          <span class="iconfont banner-icon">&#xe678;</span>
+          {{this.gallaryImgs.length}}
+        </div>
       </div>
     </div>
     <common-gallery
-      :imgs="imgs"
+      :imgs="gallaryImgs"
       v-show="showGallery"
       @close="handleGalleryClose"/>
   </div>
@@ -24,11 +27,14 @@ export default {
   components: {
     CommonGallery
   },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
+  },
   data () {
     return {
-      showGallery: false,
-      imgs: ['//img1.qunarzz.com/sight/p0/1702/59/599eaa77ae6a8fe3a3.water.jpg_600x330_2d07cfde.jpg',
-        '//img1.qunarzz.com/sight/p0/1505/97/97d57e2d8cee926d.water.jpg_600x330_7cfcc192.jpg']
+      showGallery: false
     }
   },
   methods: {
